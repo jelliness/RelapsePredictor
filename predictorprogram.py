@@ -1,7 +1,7 @@
 import openpyxl
 
-wb = openpyxl.load_workbook(r'SmokingDataSet.xlsx')
-sheet = wb["Summary"]
+wb = openpyxl.load_workbook(r'SmokingDataSet1.xlsx')
+sheet = wb["SummaryOfData"]
 
 P_age={}
 P_gender={}
@@ -127,7 +127,7 @@ for i in range(56,61):
     #print(P_mainAccess)
 
 
-N_age='17 - 30'
+N_age="YOUNG ADULTS"
 N_gender='M'
 N_cvStatus='Single'
 N_cessation='Yes'
@@ -136,20 +136,19 @@ N_type='SocialSmoker'
 N_ageStart='15 - 19'
 N_influence='PeerPressure'
 N_urge='Happy'
-N_noSticks=' 16 - 20'
+N_noSticks='16 - 20'
 N_mainAccess='Bars'
 
-numerator1 =(21/69)*float(P_age[N_age]['P(Yes)'])*float(P_gender[N_gender]['P(Yes)'])*float(P_cvStatus[N_cvStatus]['P(Yes)'])*float(P_cessation[N_cessation]['P(Yes)'])*float(P_empStatus[N_empStatus]['P(Yes)'])*float(P_type[N_type]['P(Yes)'])*float(P_ageStart[N_ageStart]['P(Yes)'])*float(P_influence[N_influence]['P(Yes)'])*float(P_urge[N_urge]['P(Yes)'])*float(P_noSticks[N_noSticks]['P(Yes)'])*float(P_mainAccess[N_mainAccess]['P(Yes)'])
-denominator=float(P_age[N_age]['Total'])*float(P_gender[N_gender]['Total'])*float(P_cvStatus[N_cvStatus]['Total'])*float(P_cessation[N_cessation]['Total'])*float(P_empStatus[N_empStatus]['Total'])*float(P_type[N_type]['Total'])*float(P_ageStart[N_ageStart]['Total'])*float(P_influence[N_influence]['Total'])*float(P_urge[N_urge]['Total'])*float(P_noSticks[N_noSticks]['Total'])*float(P_mainAccess[N_mainAccess]['Total'])
-relapseYes=numerator1/denominator
-print(numerator1)
+num1=P_age[N_age]['P(Yes)']*P_gender[N_gender]['P(Yes)']*P_cvStatus[N_cvStatus]['P(Yes)']*P_cessation[N_cessation]['P(Yes)']*P_empStatus[N_empStatus]['P(Yes)']*P_type[N_type]['P(Yes)']*P_ageStart[N_ageStart]['P(Yes)']*P_influence[N_influence]['P(Yes)']*P_urge[N_urge]['P(Yes)']*P_noSticks[N_noSticks]['P(Yes)']*P_mainAccess[N_mainAccess]['P(Yes)']*21/69
+num2=P_age[N_age]['P(No)']*P_gender[N_gender]['P(No)']*P_cvStatus[N_cvStatus]['P(No)']*P_cessation[N_cessation]['P(No)']*P_empStatus[N_empStatus]['P(No)']*P_type[N_type]['P(No)']*P_ageStart[N_ageStart]['P(No)']*P_influence[N_influence]['P(No)']*P_urge[N_urge]['P(No)']*P_noSticks[N_noSticks]['P(No)']*P_mainAccess[N_mainAccess]['P(No)']*48/69
+den1=P_age[N_age]['Total']*P_gender[N_gender]['Total']*P_cvStatus[N_cvStatus]['Total']*P_cessation[N_cessation]['Total']*P_empStatus[N_empStatus]['Total']*P_type[N_type]['Total']*P_ageStart[N_ageStart]['Total']*P_influence[N_influence]['Total']*P_urge[N_urge]['Total']*P_noSticks[N_noSticks]['Total']*P_mainAccess[N_mainAccess]['Total']
+relapseYes=num1/den1
+relapseNo=num2/den1
 
-numerator2=(48/69)*float(P_age[N_age]['P(No)'])*float(P_gender[N_gender]['P(No)'])*float(P_cvStatus[N_cvStatus]['P(No)'])*float(P_cessation[N_cessation]['P(No)'])*float(P_empStatus[N_empStatus]['P(No)'])*float(P_type[N_type]['P(No)'])*float(P_ageStart[N_ageStart]['P(No)'])*float(P_influence[N_influence]['P(No)'])*float(P_urge[N_urge]['P(No)'])*float(P_noSticks[N_noSticks]['P(No)'])*float(P_mainAccess[N_mainAccess]['P(No)'])
-relapseNo=numerator2/denominator
-print(numerator2)
 
-YES=relapseYes/relapseYes+relapseNo
-NO=relapseNo/relapseYes+relapseNo
+yesPercent=relapseYes/(relapseYes+relapseNo)
+noPercent=relapseNo/(relapseYes+relapseNo)
 
-print(YES)
-print(NO)
+print(yesPercent)
+print(noPercent)
+print(yesPercent+noPercent)
