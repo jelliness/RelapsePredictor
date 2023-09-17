@@ -125,19 +125,124 @@ for i in range(56,61):
     'P(No)':sheet['D'+str(i+1)].value,
         }
     #print(P_mainAccess)
+N_age = ""
+user_input = input("Put your current age: ")
+if int(user_input) < 17:
+    N_age = "CHILDREN"
+elif 16 < int(user_input) < 31:
+    N_age = "YOUNG ADULTS"
+elif 30 < int(user_input) < 46:
+    N_age = "MIDDLE ADULTS"
+elif int(user_input) > 45:
+    N_age = "OLD ADULTS"
 
+N_gender = "M"
+user_input = input("Put your gender [M or F]: ")
+if user_input == "M":
+    N_gender = "M"
+else:
+    N_gender = "F"
 
-N_age="YOUNG ADULTS"
-N_gender='M'
-N_cvStatus='Single'
-N_cessation='Yes'
-N_empStatus='Officeing'
-N_type='SocialSmoker'
-N_ageStart='15 - 19'
-N_influence='PeerPressure'
-N_urge='Happy'
-N_noSticks='16 - 20'
-N_mainAccess='Bars'
+N_cvStatus = ""
+print("[1] - Single\n[2] - Married\n")
+user_input = input("Put your civil status: ")
+if user_input == "1":
+    N_cvStatus = "Single"
+else:
+    N_cvStatus = "Married"
+
+N_cessation = ""
+user_input = input("Do you have info cessation [Y/N]: ")
+if user_input == "Y":
+    N_cessation = "Yes"
+else:
+    N_cessation = "No"
+
+N_empStatus = ""
+print("[1] - Employed\n[2] - NotOfficeing\n[3] - Officeing\n[4] - Retired")
+user_input = input("What is your employee status?")
+if user_input == "1":
+    N_empStatus = "Employed"
+elif user_input == "2":
+    N_empStatus = "NotOfficeing"
+elif user_input == "3":
+    N_empStatus = "Officeing"
+else:
+    N_empStatus = "Retired"
+
+N_type = ""
+print("[1] - Regular Smoker\n[2] - Social Smoker")
+user_input = input("What type of smoker are you?")
+if user_input == "1":
+    N_type = "RegularSmoker"
+else:
+    N_type = "SocialSmoker"
+
+N_ageStart=""
+user_input = input("How old were you when you started smoking? ")
+if int(user_input) < 15:
+    N_ageStart = "10 - 14"
+elif 14 < int(user_input) < 20:
+    N_ageStart = "15 - 19"
+elif int(user_input) > 20:
+    N_ageStart = "Above 20"
+
+N_influence=''
+print('\n[1] - Curiosity\n[2] - Family Influence\n[3] - Peer Pressure')
+user_input = input("Put your smoke influence: ")
+if user_input == "1":
+    N_influence = "Curiosity"
+elif user_input == "2":
+    N_influence = "FamilyInfluence"
+else:
+    N_influence = "PeerPressure"
+
+N_urge = ""
+print('\n[1] - Stressed\n[2] - Bored\n[3] - Sad\n[4] - Angry\n[5] - Happy')
+user_input = input("Put your urge: ")
+if user_input == "1":
+    N_urge = "Stressed"
+elif user_input == "2":
+    N_urge = "Bored"
+elif user_input == "3":
+    N_urge = "Sad"
+elif user_input == "4":
+    N_urge = "Angry"
+else:
+    N_urge = "Happy"
+
+N_noSticks=''
+user_input = input("Enter the number of sticks per day: ")
+if int(user_input) < 6:
+    N_noSticks = "1 - 5"
+elif 5 < int(user_input) < 11:
+    N_noSticks = "6 - 10"
+elif 10 < int(user_input) < 16:
+    N_noSticks = "11 - 15"
+elif 15 < int(user_input) < 21:
+    N_noSticks = "16 - 20"
+elif 20 < int(user_input) < 26:
+    N_noSticks = "21 - 25"
+elif 25 < int(user_input) < 31:
+    N_noSticks = "26 - 30"
+elif 30 < int(user_input) < 36:
+    N_noSticks = "31 - 35"
+elif 35 < int(user_input) < 41:
+    N_noSticks = "36 - 40"
+
+N_mainAccess=''
+print('[1] - Home\n[2] - Office\n[3] - Public Place\n[4] - Others\n[5] - Bars')
+user_input = input("Enter main access: ")
+if user_input == "1":
+    N_mainAccess = "Home"
+elif user_input == "2":
+    N_mainAccess = "Office"
+elif user_input == "3":
+    N_mainAccess = "PublicPlace"
+elif user_input == "4":
+    N_mainAccess = "Others"
+else:
+    N_mainAccess = "Bars"
 
 num1=P_age[N_age]['P(Yes)']*P_gender[N_gender]['P(Yes)']*P_cvStatus[N_cvStatus]['P(Yes)']*P_cessation[N_cessation]['P(Yes)']*P_empStatus[N_empStatus]['P(Yes)']*P_type[N_type]['P(Yes)']*P_ageStart[N_ageStart]['P(Yes)']*P_influence[N_influence]['P(Yes)']*P_urge[N_urge]['P(Yes)']*P_noSticks[N_noSticks]['P(Yes)']*P_mainAccess[N_mainAccess]['P(Yes)']*21/69
 num2=P_age[N_age]['P(No)']*P_gender[N_gender]['P(No)']*P_cvStatus[N_cvStatus]['P(No)']*P_cessation[N_cessation]['P(No)']*P_empStatus[N_empStatus]['P(No)']*P_type[N_type]['P(No)']*P_ageStart[N_ageStart]['P(No)']*P_influence[N_influence]['P(No)']*P_urge[N_urge]['P(No)']*P_noSticks[N_noSticks]['P(No)']*P_mainAccess[N_mainAccess]['P(No)']*48/69
