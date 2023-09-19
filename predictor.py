@@ -246,8 +246,13 @@ print()
 
 print("P(Yes | Record): ",RelapsePositive)
 print("P(No | Record): ",RelapseNegative)
-print("Positive to Relapse Rate %: ", positiveRelapseRate)
-print("Negative to Relapse Rate %: ", negativeRelapseRate)
+print(f'Positive to Relapse Rate %: {round(positiveRelapseRate * 100, 4)}%')
+print(f'Negative to Relapse Rate %: {round(negativeRelapseRate * 100, 4)}%')
 print("Total Percentage %: ", totalPercentage)
+
+if positiveRelapseRate > negativeRelapseRate:
+    print("REMARKS: The smoker is most likely to relapse.")
+else:
+    print("REMARKS: The smoker is most likely not to relapse.")
 
 
