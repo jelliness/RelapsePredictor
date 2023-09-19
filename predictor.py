@@ -94,6 +94,136 @@ def calculateResponse(record,numOfResponse,overallNumOfData,a,K,index):
     predictedValue=numerator/denominator    
     return predictedValue
 
+# target = []
+# N_age = ""
+# user_input = input("Put your current age: ")
+# if int(user_input) < 17:
+#     N_age = "CHILDREN"
+# elif 16 < int(user_input) < 31:
+#     N_age = "YOUNG ADULTS"
+# elif 30 < int(user_input) < 46:
+#     N_age = "MIDDLE ADULTS"
+# elif int(user_input) > 45:
+#     N_age = "OLD ADULTS"
+# target.append(N_age)
+
+# N_gender = "M"
+# user_input = input("Put your gender [M or F]: ")
+# if user_input == "M":
+#     N_gender = "M"
+# else:
+#     N_gender = "F"
+# target.append(N_gender)
+#
+# N_cvStatus = ""
+# print("[1] - Single\n[2] - Married\n")
+# user_input = input("Put your civil status: ")
+# if user_input == "1":
+#     N_cvStatus = "Single"
+# else:
+#     N_cvStatus = "Married"
+# target.append(N_cvStatus)
+#
+# N_cessation = ""
+# user_input = input("Do you have info cessation [Y/N]: ")
+# if user_input == "Y":
+#     N_cessation = "Yes"
+# else:
+#     N_cessation = "No"
+# target.append(N_cessation)
+#
+# N_empStatus = ""
+# print("[1] - Employed\n[2] - NotOfficeing\n[3] - Officeing\n[4] - Retired")
+# user_input = input("What is your employee status?")
+# if user_input == "1":
+#     N_empStatus = "Employed"
+# elif user_input == "2":
+#     N_empStatus = "NotOfficeing"
+# elif user_input == "3":
+#     N_empStatus = "Officeing"
+# else:
+#     N_empStatus = "Retired"
+# target.append(N_empStatus)
+#
+# N_type = ""
+# print("[1] - Regular Smoker\n[2] - Social Smoker")
+# user_input = input("What type of smoker are you?")
+# if user_input == "1":
+#     N_type = "RegularSmoker"
+# else:
+#     N_type = "SocialSmoker"
+# target.append(N_type)
+#
+# N_ageStart=""
+# user_input = input("How old were you when you started smoking? ")
+# if int(user_input) < 15:
+#     N_ageStart = "10 - 14"
+# elif 14 < int(user_input) < 20:
+#     N_ageStart = "15 - 19"
+# elif int(user_input) > 20:
+#     N_ageStart = "Above 20"
+# target.append(N_ageStart)
+#
+# N_influence=''
+# print('\n[1] - Curiosity\n[2] - Family Influence\n[3] - Peer Pressure')
+# user_input = input("Put your smoke influence: ")
+# if user_input == "1":
+#     N_influence = "Curiosity"
+# elif user_input == "2":
+#     N_influence = "FamilyInfluence"
+# else:
+#     N_influence = "PeerPressure"
+# target.append(N_influence)
+#
+# N_urge = ""
+# print('\n[1] - Stressed\n[2] - Bored\n[3] - Sad\n[4] - Angry\n[5] - Happy')
+# user_input = input("Put your urge: ")
+# if user_input == "1":
+#     N_urge = "Stressed"
+# elif user_input == "2":
+#     N_urge = "Bored"
+# elif user_input == "3":
+#     N_urge = "Sad"
+# elif user_input == "4":
+#     N_urge = "Angry"
+# else:
+#     N_urge = "Happy"
+# target.append(N_urge)
+#
+# N_noSticks=''
+# user_input = input("Enter the number of sticks per day: ")
+# if int(user_input) < 6:
+#     N_noSticks = "1 - 5"
+# elif 5 < int(user_input) < 11:
+#     N_noSticks = "6 - 10"
+# elif 10 < int(user_input) < 16:
+#     N_noSticks = "11 - 15"
+# elif 15 < int(user_input) < 21:
+#     N_noSticks = "16 - 20"
+# elif 20 < int(user_input) < 26:
+#     N_noSticks = "21 - 25"
+# elif 25 < int(user_input) < 31:
+#     N_noSticks = "26 - 30"
+# elif 30 < int(user_input) < 36:
+#     N_noSticks = "31 - 35"
+# elif 35 < int(user_input) < 41:
+#     N_noSticks = "36 - 40"
+# target.append(N_noSticks)
+#
+# N_mainAccess=''
+# print('[1] - Home\n[2] - Office\n[3] - Public Place\n[4] - Others\n[5] - Bars')
+# user_input = input("Enter main access: ")
+# if user_input == "1":
+#     N_mainAccess = "Home"
+# elif user_input == "2":
+#     N_mainAccess = "Office"
+# elif user_input == "3":
+#     N_mainAccess = "PublicPlace"
+# elif user_input == "4":
+#     N_mainAccess = "Others"
+# else:
+#     N_mainAccess = "Bars"
+# target.append(N_mainAccess)
 
 
 target=['YOUNG ADULTS','M','Single','No','Officeing','RegularSmoker','15 - 19','FamilyInfluence','Sad','6 - 10','Bars']
