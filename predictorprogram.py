@@ -254,6 +254,8 @@ relapseNo=num2/den1
 yesPercent=relapseYes/(relapseYes+relapseNo)
 noPercent=relapseNo/(relapseYes+relapseNo)
 
-print(yesPercent)
-print(noPercent)
-print(yesPercent+noPercent)
+print(f'Relapse Yes: {relapseYes}')
+print(f'Relapse No: {relapseNo}')
+print(f'Yes percent: {yesPercent}')
+print(f'No percent: {noPercent}')
+print(f'Total Percent: {round(yesPercent+noPercent, 2)}')
